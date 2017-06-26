@@ -11,14 +11,25 @@ angular.module('starter')
 
       var LOCAL_TOKEN_KEY = 'yourTokenKey';
 
-      //var storeFormCredentials =  function(data) {
-
 
       var storeFormCredentials =  function(data) {
-        var storage = window.localStorage.getItem(LOCAL_TOKEN_KEY + data);
+
+
+          //Conversion des Objects en chaine JSON
+          var datasTring = JSON.stringify(data);
+
+
+          //Stockage des données du Formulaire en Session
+          sessionStorage.setItem("FormDatas",datasTring);
+
+          //Récupération des données par la key : FormDatas
+          var FormDatas = sessionStorage.getItem("FormDatas");
+
+
 
           console.log('store successfully !!!!!');
 
+          return FormDatas;
         };
 
 
