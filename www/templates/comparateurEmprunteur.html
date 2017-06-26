@@ -1,0 +1,155 @@
+<ion-view view-title="Comparateur Emprunteur" name="dashboard-view">
+    <ion-content class="padding">
+        <form  name="faleComigoForm" class="falecomigo" novalidate form-manager >
+            <div class="list list-inset" >
+
+
+                <label class="item item-input item-select">
+                    <label class="input-label">
+                       Civilité
+                    </label>
+                    <select ng-model="gender" required>
+                        <option value="homme"> Homme</option>
+                        <option value="femme">Femme</option>
+                    </select>
+                </label>
+
+
+
+                <!-- Nom -->
+                <label class="item item-input">
+                    <input ng-model="message.name" name="fieldName" type="text" placeholder="Nom"  required ng-minlength="2" ng-maxlength="70">
+                </label>
+
+                <!-- Prenom -->
+                <label class="item item-input">
+                    <input ng-model="message.prenom" name="fieldName" type="text" placeholder="Prénom" required ng-minlength="2" ng-maxlength="70">
+                </label>
+
+
+                <!-- Email -->
+                <label class="item item-input">
+                    <input ng-model="message.email" name="fieldEmail" type="email" placeholder="E-mail" required ng-maxlength="50">
+                </label>
+
+                <!-- Date de Naissance -->
+                <label class="item item-input">
+                    <input ng-model="message.dateNaissance" name="fieldateNaissance" type="text" placeholder="__/__/____" required ng-maxlength="50">
+                </label>
+
+
+                <!-- Adresse -->
+                <label class="item item-input">
+                    <input ng-model="message.adresse" name="fielAdresse" type="text" placeholder="adresse" required ng-maxlength="50">
+                </label>
+
+
+                <!-- Code Postal -->
+                <label class="item item-input">
+                    <input ng-model="message.codePostal" name="fielCodePostal" type="text" placeholder="Code Postal" required ng-maxlength="50">
+                </label>
+
+
+                <!-- Ville -->
+                <label class="item item-input">
+                    <input ng-model="message.ville" name="fielVille" type="text" placeholder="Ville" required ng-maxlength="50">
+                </label>
+
+
+                <!-- Téléphone -->
+                <label class="item item-input">
+                    <input ng-model="message.telephone" name="fielTelephone" type="text" placeholder="telephone" required ng-maxlength="50">
+                </label>
+
+
+                <!-- Email -->
+                <label class="item item-input">
+                    <input ng-model="message.email" name="fielEmail" type="text" placeholder="Email" required ng-maxlength="50">
+                </label>
+
+
+                <!-- Profession -->
+                <label class="item item-input">
+                    <input ng-model="message.profession" name="fielProfession" type="text" placeholder="Profession" required ng-maxlength="50">
+                </label>
+
+
+                <!-- Activité -->
+                <label class="item item-input item-select">
+                    <label class="input-label">
+                        Activité
+                    </label>
+                    <select ng-model="gender" required>
+                        <option value="actif"> actif</option>
+                        <option value="Sans Emploi avec Allocations chômage">Sans Emploi avec Allocations chômage</option>
+                        <option value="Sans emploi sans alloation chômage">Sans emploi sans alloation chômage</option>
+                        <option value="Retraité">Retraité</option>
+                        <option value="TNS">TNS</option>
+                    </select>
+                </label>
+
+
+                <!-- Activité -->
+                <label class="item item-input item-select">
+                    <label class="input-label">
+                        Franchise ITT/IPT/IPP
+                    </label>
+                    <select ng-model="franchise" required>
+                        <option value="60j"> 60 jours</option>
+                        <option value="90j">90 jours</option>
+
+                    </select>
+                </label>
+
+                <!-- Garantie Complémentaires -->
+                <label class="item item-input item-select">
+
+
+
+                <!--<label class="input-label">-->
+                    <!--Garanties Complémentaires-->
+                <!--</label><br/>-->
+
+
+                <div class="col">
+                    <label class="item item-icon-left item-radio" style="border: none">
+                        <input type="radio" name="group1">
+                        <div class="item-content" style="margin-left:0px">
+                            Perte d'emploi
+                        </div>
+                        <i class="radio-icon ion-checkmark"></i>
+                    </label>
+                </div>
+                <div class="col">
+                    <label class="item item-icon-left item-radio" style="border: none">
+                        <input type="radio" name="group2">
+                        <div class="item-content">
+                            Garantie dos et psy
+                        </div>
+                        <i class="radio-icon ion-checkmark"></i>
+                    </label>
+                </div>
+
+
+                <label class="item item-input">
+                    <input ng-model="message.montant" name="fieldSubject" type="text" placeholder="Montant" required ng-minlength="2" ng-maxlength="70">
+                </label>
+
+            </div>
+
+
+            <div class="padding container">
+                <div class="row">
+                    <button ng-click="reset()"  class="button button-assertive button-small col col-40"              > Annuler </button>
+                    <button  ng-click="Emprunteur(message)" class="button button-balanced  button-small col col-40 col-offset-10"> Envoyer </button>
+                </div>
+            </div>
+        </form>
+    </ion-content>
+</ion-view>
+
+
+
+
+
+
