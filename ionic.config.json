@@ -1,6 +1,6 @@
 {
   "name": "elololoApp",
-  "app_id": "",
+  "app_id": "af7de8d7",
   "type": "ionic1",
   "watchPatterns": [
     "scss/**/*"

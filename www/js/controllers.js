@@ -52,7 +52,7 @@ angular.module('starter')
 /**
  * Controlleur Comparateur Emprunteur
  */
-    .controller('EmprunteurCtrl', function($scope, $state, $ionicPopup, EmprunteurService) {
+    .controller('EmprunteurCtrl', function($scope,$ionicLoading, $state, $http,$ionicPopup, EmprunteurService) {
         $scope.data = {};
 
         console.log('Service===>');
@@ -64,8 +64,17 @@ angular.module('starter')
             console.log("Emprunteur=====>");
 
 
-            EmprunteurService.store(data);
 
+            EmprunteurService.store(data);
+            EmprunteurService.send(data);
+
+            $ionicLoading.show({
+                template:'Loading....'
+            });
+
+            $http.get(url).success(function(response){
+                $ionicLoading.hide();
+            })
 
         };
 

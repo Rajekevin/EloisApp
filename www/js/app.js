@@ -8,6 +8,8 @@
 angular.module('starter', ['ionic'])
 
 
+
+    /***ROUTE **/
     .config(function ($stateProvider, $urlRouterProvider, USER_ROLES) {
         $stateProvider
             .state('login', {
