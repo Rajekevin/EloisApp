@@ -9,10 +9,19 @@
 
 
         <ion-list>
-            <ion-item ng-repeat="item in mesDatas">
-                {{item.prenom}}
-                {{item.dateDevis}}
+            <div class="row header">
+                <div class="col">Nom Prenom</div>
+                <div class="col">Date Devis</div>
 
+            </div>
+            <ion-item ng-repeat="item in mesDatas">
+
+
+
+                <div class="row">
+                    <div class="col"> {{item.prenom}}</div>
+                    <div class="col">{{item.dateDevis}}</div>
+                </div>
 
             </ion-item>
         </ion-list>
