@@ -5,6 +5,53 @@ angular.module('starter')
 
 
 /***
+ *Service Affichage Dossier
+ */
+    .service('suiviDossiersService', function($q, $http,LocalRepo, USER_ROLES) {
+
+
+        var login = function(name, pw) {
+
+            return $q(function(resolve, reject) {
+
+
+                var url = "https://intra.elois.fr/lastDevis?" + "925";
+
+                $http({
+                    method: 'POST',
+                    url: url
+                }).success(function (status) {
+                    //your code when success*res
+                    resolve(status);
+
+
+
+
+                });
+
+            });
+        };
+
+
+
+        var stat =  [];
+        var afficheDossier =  function() {
+
+
+        };
+
+        return {
+            afficheDossier: login,
+            statos : stat
+        };
+
+    })
+
+
+
+
+
+/***
  *Service Comparateur Emprunteur
  */
     .service('EmprunteurService', function($q, $http, USER_ROLES) {
@@ -27,11 +74,7 @@ angular.module('starter')
 
 
 
-
-
-
         var sendFormData =  function(data) {
-
 
             var url = "https://intra.elois.fr/mobileForm?";
 
@@ -138,7 +181,6 @@ angular.module('starter')
 
                         }else{
                             reject('Login Failed.');
-
                         }
                     });
 
@@ -181,6 +223,25 @@ angular.module('starter')
         };
     })
 
+
+    /**factory test */
+
+    .factory('LocalRepo', function () {
+        var data = {}
+        return {
+            Get: function (key) {
+                return data.key;
+            },
+            Set: function (key, val) {
+                return data.key = val;
+            }
+        }
+    })
+
+
+
     .config(function ($httpProvider) {
         $httpProvider.interceptors.push('AuthInterceptor');
     });
+
+

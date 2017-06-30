@@ -9,7 +9,7 @@ angular.module('starter', ['ionic'])
 
 
 
-    /***ROUTE **/
+
     .config(function ($stateProvider, $urlRouterProvider, USER_ROLES) {
         $stateProvider
             .state('login', {
@@ -35,7 +35,8 @@ angular.module('starter', ['ionic'])
                 url: 'main/suiviDossiers',
                 views: {
                     'public-tab': {
-                        templateUrl: 'templates/suiviDossiers.html'
+                        templateUrl: 'templates/suiviDossiers.html',
+                        controller: 'suiviDossiersCtrl'
                     }
                 }
             })

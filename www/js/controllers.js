@@ -49,6 +49,31 @@ angular.module('starter')
     })
 
 
+
+/**
+ * Controlleur Comparateur Emprunteur
+ */
+    .controller('suiviDossiersCtrl', function($scope,$ionicLoading, $state, $http,$ionicPopup, suiviDossiersService) {
+        //$scope.data = {};
+      var mesDatas;
+
+        $scope.datass =  suiviDossiersService.afficheDossier();
+
+
+
+        $scope.datass.then(function(data) {
+            $scope.mesDatas = data;
+
+            console.log("Scope dossier service ==>");
+            console.log( $scope.mesDatas);
+        });
+
+
+    })
+
+
+
+
 /**
  * Controlleur Comparateur Emprunteur
  */
